@@ -1,0 +1,506 @@
+/* Genel Stil Ayarları ve Font Optimizasyonu */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ana Menü ve Oyun Sonucu Sütunu Stili */
+#mainMenu, #result-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    transition: transform 0.3s ease;
+}
+
+#mainMenu:hover, #result-container:hover {
+    transform: translate(-50%, -50%) scale(1.02);
+}
+
+/* Başlık Stilleri */
+h1, h2 {
+    color: #4CAF50;
+    margin: 0.5em 0;
+}
+.answerButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+/* Buton Stilleri */
+.button, .menuButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Daha belirgin bir arka plan rengi */
+    color: #fff; /* Beyaz metin rengi */
+    border: 2px solid #4CAF50; /* Kenarlık ekleme */
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.button:hover, .answerButton:hover, .menuButton:hover {
+    background-color: #367c39; /* Üzerine gelindiğinde farklı bir arka plan rengi */
+    border-color: #367c39; /* Üzerine gelindiğinde kenarlık rengi değişimi */
+}
+
+
+/* Geri Bildirim */
+#feedback {
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sonraki Soru Butonu */
+#next-question {
+    margin-top: 20px;
+    width: auto;
+    padding: 10px 20px;
+}
+
+/* Geri Sayım Çemberi ve Metni */
+#countdown-circle, #countdown-text {
+    transform: rotate(0deg);
+    font-weight: bold;
+}
+
+/* Arkadaşına Sor Butonu Hover */
+#ask-friend:hover {
+    background-color: #FFDF00;
+    color: #333;
+}
+
+/* Bilgi Sütunu Tasarımı */
+#info-column {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+/* Responsive Tasarım */
+@media only screen and (max-width: 600px) {
+    #mainMenu, #result-container, #info-column {
+        max-width: 90%;
+        width: auto;
+    }
+
+    .button, .answerButton, .menuButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #feedback, #countdown-text {
+        font-size: 14px;
+    }
+}
+
+/* Animasyonlar */
+@keyframes finalCountdownAnimation {
+    0%, 100% { font-size: 20px; color: #333; }
+    50% { font-size: 24px; color: #FF5733; }
+}
+
+@keyframes blinkAnimation {
+    0%, 100% { stroke: #FF5733; }
+    50% { stroke: #FFC0CB; }
+}
+
+.final-countdown-text {
+    animation: finalCountdownAnimation 1s infinite;
+}
+
+.final-countdown-circle {
+    animation: blinkAnimation 1s infinite;
+}
+/* Doğru ve Yanlış Cevap Stilleri */
+.correct {
+    background-color: #4CAF50 !important; /* Yeşil */
+    color: white !important;
+}
+
+.wrong {
+    background-color: #f44336 !important; /* Kırmızı */
+    color: white !important;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px; /* İçeriğin çok geniş ekranlarda aşırı genişlemesini önler */
+}
+@media only screen and (max-width: 600px) {
+    .menuButton {
+        padding: 12px 24px; /* Mobil cihazlarda buton boyutunu artır */
+    }
+    h1 {
+        font-size: 20px; /* Başlık boyutunu azalt */
+    }
+}
+.button {
+    min-width: 48px; /* Minimum dokunma alanı */
+    min-height: 48px; /* Minimum dokunma alanı */
+    margin: 12px; /* Butonlar arası boşluk */
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* İçerikleri yatay olarak ortala */
+}
+/* Zamanlayıcı ve Metin Animasyonları */
+@keyframes finalCountdownAnimation {
+    0%, 100% { font-size: 20px; color: #333; }
+    50% { font-size: 24px; color: #FF5733; }
+}
+
+@keyframes blinkAnimation {
+    0%, 100% { stroke: #FF5733; }
+    50% { stroke: #FFC0CB; }
+}
+
+.final-countdown-text {
+    animation: finalCountdownAnimation 1s infinite;
+}
+
+.final-countdown-circle {
+    animation: blinkAnimation 1s infinite;
+}
+
+
+
+/* Yanlış Cevap Butonu Sallanma Animasyonu */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.wrong {
+    animation: shake 0.5s;
+}
+
+.menuButton:active {
+    transform: scale(0.95); /* Buton basıldığında küçük bir ölçekte animasyon */
+}
+#mainMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#playerNameInput {
+    margin-top: 20px;
+}
+
+#playerNameInput input {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#playerNameInput button, #startMenuButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#startMenuButton:hover, #startGameButton:hover {
+    background-color: #367c39;
+}
+#startMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+#playerNameInput {
+    margin-top: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    width: calc(100% - 40px); /* Genişlik ayarı */
+}
+
+#startGameButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#startGameButton:hover {
+    background-color: #367c39;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ekranın tamamını kaplar */
+}
+
+#score-board {
+    width: 200px; /* Skor tablosunun genişliği */
+    height: 100%; /* Tam ekran yüksekliği */
+    background-color: #000; /* Arka plan rengi siyah */
+    color: #fff; /* Metin rengi beyaz */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#game-area {
+    flex-grow: 1; /* Geri kalan alanı kaplar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Skor Tablosu Stili */
+#score-board {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Sağdan sola değiştirildi */
+    background-color: rgba(0, 0, 0, 0.8); /* Yarı saydam siyah arka plan */
+    color: #fff; /* Beyaz metin rengi */
+    padding: 20px;
+    border-radius: 10px; /* Kenarları yuvarlak */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+    margin: 20px 0; /* Üst ve alt boşluk */
+    width: 250px; /* Genişlik */
+}
+
+#score-board h2 {
+    text-align: center; /* Başlığı ortala */
+    margin-bottom: 10px; /* Başlık ile liste arasında boşluk */
+    font-size: 24px; /* Başlık font boyutu */
+}
+
+#high-score-list {
+    list-style-type: none; /* Liste işaretlerini kaldır */
+    padding: 0; /* Varsayılan padding'i sıfırla */
+    margin: 0; /* Varsayılan margin'i sıfırla */
+    font-size: 18px; /* Liste elemanlarının font boyutu */
+    max-height: 300px; /* Maksimum yükseklik */
+
+}
+
+#high-score-list li {
+    border-bottom: 1px solid #777; /* Liste elemanları arasında çizgi */
+    padding: 8px 0; /* Üst ve alt padding */
+    text-align: left; /* Metni sola hizala */
+}
+
+#high-score-list li:last-child {
+    border-bottom: none; /* Son elemanda alt çizgiyi kaldır */
+}
+
+@media only screen and (max-width: 600px) {
+    #score-board {
+        position: fixed;
+        top: 20px;
+        left: 20px; /* Mobil cihazlarda da sol tarafa sabitlendi */
+    }
+}
+/* Geçiş efekti için genel stil */
+.transition {
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+/* Gizli durum */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Görünür durum */
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#score-board {
+    padding: 10px; /* Daha az padding */
+}
+#score-board {
+    box-sizing: border-box;
+}
+.correct {
+    background-color: #4CAF50; /* Yeşil */
+    color: white;
+}
+
+.wrong {
+    background-color: #f44336; /* Kırmızı */
+    color: white;
+}
+/* Medya sorgusu ekleyerek telefon boyutlarına uygun stil değişiklikleri */
+@media only screen and (max-width: 600px) {
+    /* Skor tablosunu alt kısmına taşı */
+    #score-board {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%; /* Genişlik ayarı */
+    }
+
+    /* Buton boyutlarını küçült */
+    .button, .answerButton, .menuButton {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* Oyun alanı genişliğini daralt */
+    #game-area {
+        padding: 10px;
+    }
+
+    /* Ana menü ve sonuç ekranı genel düzenini ayarla */
+    #mainMenu, #result-container {
+        max-width: 90%;
+        width: auto;
+    }
+
+    /* İsim girişinin genişliğini düzenle */
+    #player-name {
+        width: calc(100% - 20px); /* Genişlik ayarı */
+    }
+}
+.button {
+    background-color: #4CAF50; /* Varsayılan arka plan rengi */
+    color: white; /* Varsayılan metin rengi */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049; /* Hover durumunda arka plan rengini değiştirme */
+    color: white; /* Metin rengini beyaza dönüştürme */
+}
+@media only screen and (max-width: 600px) {
+    /* Küçük ekranlar için stil ayarları */
+    .button {
+        padding: 5px 10px; /* Buton boyutlarını küçültme */
+    }
+    /* Diğer stil ayarları */
+}
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .column {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .name-input {
+    width: 80%; /* İsim yazma alanının genişliğini ayarla */
+  }
+  
+  .save-button {
+    width: 80%; /* Butonun genişliğini ayarla */
+  }
+  #score-board {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Sağ kenardan 20 piksel mesafe */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    width: 250px;
+}
+.button:hover, .menuButton:hover, .answerButton:hover {
+    background-color: #367c39; /* Daha koyu bir yeşil */
+    color: #ffffff; /* Metin rengini beyaza çevir */
+    transform: scale(1.05); /* Butonu biraz büyüt */
+}
+.button {
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #555; /* Butonun rengini değiştir */
+  }
+  .question-container {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .question-container.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+.flash-green {
+  animation: flashGreen 0.5s 2; /* 2 kez yanıp sönen yeşil bir ışık */
+}
+
+@keyframes flashGreen {
+  from, to { background-color: transparent; }
+  50% { background-color: green; }
+}:root {
+    --primary-color: #4CAF50;
+    --text-color: #333;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
